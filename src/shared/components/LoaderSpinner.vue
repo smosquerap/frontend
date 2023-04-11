@@ -5,12 +5,14 @@ interface Props {
   color?: string;
   size?: string;
   thickness?: number;
+  showText?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   color: 'primary',
   size: '3rem',
   thickness: 2,
+  showText: true,
 });
 
 const color = toRef(props, 'color');
@@ -21,7 +23,7 @@ const thickness = toRef(props, 'thickness');
 <template>
   <div class="column items-center">
     <q-spinner :color="color" :size="size" :thickness="thickness" />
-    <span class="q-mt-sm">Loading</span>
+    <span v-show="showText" class="q-mt-sm">Loading</span>
   </div>
 </template>
 
