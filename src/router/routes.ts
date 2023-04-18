@@ -2,11 +2,6 @@ import { RouteRecordRaw } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
-  },
-  {
     path: '/users',
     component: () => import('layouts/MainLayout.vue'),
     children: [
@@ -18,7 +13,7 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
-    path: '/issues',
+    path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('src/issues/pages/ListPage.vue') },
